@@ -1,0 +1,169 @@
+object HeaderFooterForm: THeaderFooterForm
+  Left = 0
+  Top = 0
+  Caption = 'Header Footer Form'
+  ClientHeight = 568
+  ClientWidth = 384
+  FormFactor.Width = 1440
+  FormFactor.Height = 900
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Header: TToolBar
+    Size.Width = 384.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object HeaderLabel: TLabel
+      Align = Contents
+      Size.Width = 384.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'toollabel'
+      TextSettings.HorzAlign = Center
+      Text = 'Title'
+    end
+  end
+  object Footer: TToolBar
+    Align = Bottom
+    Position.Y = 520.000000000000000000
+    Size.Width = 384.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'bottomtoolbar'
+    TabOrder = 1
+  end
+  object Button1: TButton
+    Position.X = 20.000000000000000000
+    Position.Y = 260.000000000000000000
+    Size.Width = 346.000000000000000000
+    Size.Height = 29.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'Submit'
+    OnClick = Button1Click
+  end
+  object DProvinceOrigin: TComboBox
+    Position.X = 19.000000000000000000
+    Position.Y = 82.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    OnChange = DProvinceOnChangeOrigin
+  end
+  object TLabelProvince: TText
+    Position.X = 18.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 162.000000000000000000
+    Size.Height = 18.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Province Origin'
+    TextSettings.HorzAlign = Leading
+  end
+  object DCityOrigin: TComboBox
+    Position.X = 205.000000000000000000
+    Position.Y = 82.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    OnChange = DCityOriginOnChange
+  end
+  object DCourier: TComboBox
+    Position.X = 20.000000000000000000
+    Position.Y = 219.000000000000000000
+    Size.Width = 160.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    OnChange = DCourierOnChange
+  end
+  object TLabelCity: TText
+    Position.X = 205.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 18.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'City Origin'
+    TextSettings.HorzAlign = Leading
+  end
+  object TLabelCourier: TText
+    Position.X = 19.000000000000000000
+    Position.Y = 195.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Courier'
+    TextSettings.HorzAlign = Leading
+  end
+  object TLabelWeight: TText
+    Position.X = 206.000000000000000000
+    Position.Y = 195.000000000000000000
+    Size.Width = 160.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Weight'
+    TextSettings.HorzAlign = Leading
+  end
+  object EWeight: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 13
+    Position.X = 206.000000000000000000
+    Position.Y = 219.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    OnChange = EWeightChange
+  end
+  object Text1: TText
+    Position.X = 19.000000000000000000
+    Position.Y = 128.000000000000000000
+    Size.Width = 160.000000000000000000
+    Size.Height = 18.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Province Destination'
+    TextSettings.HorzAlign = Leading
+  end
+  object DProvinceDestionation: TComboBox
+    Position.X = 20.000000000000000000
+    Position.Y = 154.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    OnChange = DProvinceOnChangeDestination
+  end
+  object Text2: TText
+    Position.X = 206.000000000000000000
+    Position.Y = 128.000000000000000000
+    Size.Width = 160.000000000000000000
+    Size.Height = 18.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'City Destination'
+    TextSettings.HorzAlign = Leading
+  end
+  object DCityDestination: TComboBox
+    Position.X = 206.000000000000000000
+    Position.Y = 154.000000000000000000
+    Size.Width = 161.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    OnChange = DCityDestinationOnChange
+  end
+  object ListBox1: TListBox
+    Position.X = 20.000000000000000000
+    Position.Y = 297.000000000000000000
+    Size.Width = 346.000000000000000000
+    Size.Height = 137.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 16
+    DisableFocusEffect = True
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    Viewport.Width = 342.000000000000000000
+    Viewport.Height = 133.000000000000000000
+  end
+end

@@ -1,0 +1,50 @@
+unit RajaOngkirRequest;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Controls.Presentation, IdHTTP, IdSSLOpenSSL,
+  IdMultipartFormData, IdGlobal, IdURI;
+
+implementation
+
+function MakeRajaOngkirRequest: string;
+var
+  IdHTTP: TIdHTTP;
+  IdSSL: TIdSSLIOHandlerSocketOpenSSL;
+  Params: TStringList;
+begin
+  IdHTTP := TIdHTTP.Create(nil);
+  IdSSL := TIdSSLIOHandlerSocketOpenSSL.Create(nil);
+  Params := TStringList.Create;
+  try
+    // Set SSL properties if needed
+    IdHTTP.IOHandler := IdSSL;
+
+    // Set request headers
+    IdHTTP.Request.CustomHeaders.Add('key: your-api-key');
+    IdHTTP.Request.ContentType := 'application/x-www-form-urlencoded';
+
+    // Set request parameters
+    Params.Add('origin=501');
+    Params.Add('destination=114');
+    Params.Add('weight=1700');
+    Params.Add('courier=jne');
+
+    try
+      // Make the POST request
+      Result := IdHTTP.Post('https://api.rajaongkir.com/starter/cost', Params);
+    except
+      on E: Exception do
+        // Handle and log the error
+        Result := 'Error: ' + E.Message;
+    end;
+  finally
+    IdHTTP.Free;
+    IdSSL.Free;
+    Params.Free;
+  end;
+end;
+end.
